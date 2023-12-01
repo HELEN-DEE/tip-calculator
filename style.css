@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: hsl(185, 41%, 84%);
+}
+
+header {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    margin: 5% 22%;
+    padding: 2rem;
+    gap: 4rem;
+    border-radius: 20px;
+}
+
+
+.tip-bg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+    font-family: inherit
+}
+.tip-bg button {
+    background-color: hsl(183, 100%, 15%);
+    padding: 5px 20px;
+    border: 0;
+    color: hsl(0, 0%, 100%);
+    font-family: inherit;
+    font-size: 1.2rem;
+}
+
+.tip-bg button:hover {
+    background-color: hsl(172, 67%, 45%);
+    
+}
+
+    #custom {
+    background-color: hsl(189, 41%, 97%);
+    color: hsla(183, 100%, 15%, 0.527) ;
+    border: 0;
+    max-width: 6rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: inherit;
+}
+
+#custom:focus {
+    outline: none;
+}
+
+
+.dir-rtl {
+    direction: rtl;
+    
+}
+
+.text-input {
+    background-color: hsl(189, 41%, 97%);
+    
+}
+
+.text-input input {
+    background-color:transparent;
+    border: 0;
+    /* width: 18rem; */
+    padding: 7px 5px;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.text-input input:focus {
+    outline: none;
+}
+
+.text-input span {
+    margin-left: 5px;
+}
+
+label {
+    margin-bottom: 5rem;
+}
+
+.right-side {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem ;
+    border-radius: 10px;
+}
+.right-side button {
+    padding: 10px 20px;
+    background-color: hsla(172, 67%, 45%, 0.278);
+    border: 0;
+    width: 100%;
+    margin-top: 3rem;
+}
+h4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.flex span {
+    color: hsl(186, 14%, 43%);
+    font-size: 12px;
+}
+
+.flex h1 {
+    font-size: 2rem;
+    color: hsl(172, 67%, 45%);
+}
+
+.inherit {
+    font-family: inherit;
+    font-size: 1rem;
+    color: hsl(184, 14%, 56%);
+}
+
