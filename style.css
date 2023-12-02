@@ -108,11 +108,18 @@ label {
 }
 .right-side button {
     padding: 10px 20px;
-    background-color: hsla(172, 67%, 45%, 0.278);
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(184, 11%, 26%);
+    text-transform: uppercase;
     border: 0;
     width: 100%;
     margin-top: 3rem;
 }
+
+.right-side button:hover {
+    background-color: hsl(185, 95%, 85%);
+}
+
 h4 {
     display: flex;
     flex-direction: column;
@@ -137,6 +144,12 @@ h4 {
 .inherit {
     font-family: inherit;
     font-size: 1rem;
-    color: hsl(184, 14%, 56%);
 }
+
+@media screen and (max-width: 768px){
+    .container {
+        flex-direction: column;
+        margin: 0;
+    }
+} 
 
