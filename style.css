@@ -88,7 +88,13 @@ header {
   background-color: transparent;
   border: 0;
 }
+.mb-custom {
+  /* margin-bottom: 0.8rem; */
+}
 
+.mt-custom {
+  /* margin-top: 0.8rem; */
+}
 
 .text-input input:focus {
   outline: none;
