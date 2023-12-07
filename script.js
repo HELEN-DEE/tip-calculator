@@ -1,161 +1,87 @@
+// Elements
 const billTotalInput = document.getElementById('bill-total');
-const peopleInput = document.getElementById('numberOfPeople').value;
-const customInput = document.getElementById('custom');
-const tipAmount = document.getElementById('tip-amount')
-const splitBill = document.getElementById('split-bill')
+const numberOfPeopleInput = document.getElementById('numberOfPeople');
+const customPercentTip = document.getElementById('custom-percent-tip');
 
-// const btnClick = document.getElementById('btn-click')
-const btnClick = document.querySelectorAll('.btn-click')
-const btnReset = document.getElementById('btnReset')
+// Tip buttons
+const tipButtons = [
+  document.getElementById('five-percent-tip'),
+  document.getElementById('ten-percent-tip'),
+  document.getElementById('fifteen-percent-tip'),
+  document.getElementById('twenty-five-percent-tip'),
+  document.getElementById('fifty-percent-tip'),
+];
 
+// Outputs
+const tipPerPersonOutput = document.getElementById('tip-per-person');
+const totalPerPersonOutput = document.getElementById('total-per-person');
 
+// Reset Button
+const btnReset = document.getElementById('btnReset');
 
-// ! Tip Percent
-const fivePercent = document.getElementById('five-percent')
-const tenPercent = document.getElementById('ten-percent')
-const fifteenPercent = document.getElementById('fifteen-percent')
-const twentyFivePercent = document.getElementById('twenty-five-percent')
-const fiftyPercent = document.getElementById('fifty-percent')
-const customPercent = document.getElementById('custom-percent')
+// Regular Expression to check if the input is a valid number/floating-point number
+function isNumeric(value) {
+  return /^-?\d*\.?\d+$/.test(value);
+}
 
+// Event listener for tip buttons
+tipButtons.forEach((button, index) => {
+  button.addEventListener('click', function () {
+    if (
+      isNumeric(billTotalInput.value) &&
+      isNumeric(numberOfPeopleInput.value)
+    ) {
+      tipCalculator(
+        parseFloat(billTotalInput.value),
+        (index + 1) * 5,
+        parseInt(numberOfPeopleInput.value)
+      );
+    }
+  });
+});
 
-// ? Final Answers
-let grantTotal = document.getElementById('tip-amount')
-let tipPerPerson = document.getElementById('split-bill')
+// Event listener for custom tip input
+customPercentTip.addEventListener('input', function () {
+  let customPercent = parseFloat(customPercentTip.value);
+  if (
+    isNumeric(billTotalInput.value) &&
+    isNumeric(numberOfPeopleInput.value) &&
+    !isNaN(customPercent)
+  ) {
+    tipCalculator(
+      parseFloat(billTotalInput.value),
+      customPercent,
+      parseInt(numberOfPeopleInput.value)
+    );
+  }
+});
 
-fivePercent.addEventListener('click', function(){
-    let billInput = parseFloat(billTotalInput.value)
-    let numberOfpeople = parseInt(peopleInput)
-    let five_percent = (5/100).toFixed(2)
-    let calculateTipByFivePercent =( billInput * five_percent).toFixed(2)
+btnReset.addEventListener('click', function () {
+  resetFunction();
+});
 
-    let billTotal = parseFloat((calculateTipByFivePercent) + billInput).toFixed(2)
+// General Function: Calculate tip per person and total per person
+const tipCalculator = (billTotal, tipPercent, numberOfPeople) => {
+  let tipAmount = billTotal * (tipPercent / 100);
+  let totalWithTip = billTotal + tipAmount;
+  let totalPerPerson = totalWithTip / numberOfPeople;
+  let tipPerPerson = tipAmount / numberOfPeople;
 
-    let billPerPerson = (billTotal/numberOfpeople).toFixed(2)
-    
-    
-    tipAmount.innerText = billTotal
-    splitBill.innerText = billPerPerson
+  if (!totalPerPerson || !tipPerPerson) return;
 
-    console.log(splitBill)
-})
+  tipPerPersonOutput.innerHTML = tipPerPerson.toFixed(2);
+  totalPerPersonOutput.innerHTML = totalPerPerson.toFixed(2);
 
-tenPercent.addEventListener('click', function() {
-    let billInput = parseFloat(billTotalInput.value)
-    let numberOfpeople = parseInt(peopleInput)
-    let ten_percent = (10/100).toFixed(2)
-    let calculateTipByTenPercent =( billInput * ten_percent).toFixed(2)
+  return {
+    tipPerPerson: tipPerPerson.toFixed(2),
+    totalPerPerson: totalPerPerson.toFixed(2),
+  };
+};
 
-    let billTotal = parseFloat((calculateTipByTenPercent) + billInput).toFixed(2)
-
-    let billPerPerson = (billTotal/numberOfpeople).toFixed(2)
-    
-    tipAmount.innerText = billTotal
-    splitBill.innerText = billPerPerson
-
-    console.log(numberOfpeople)
-})
-
-fifteenPercent.addEventListener('click', function () {
-    let billInput = parseFloat(billTotalInput.value)
-    let numberOfpeople = parseInt(peopleInput)
-    let fifteen_percent = (15/100).toFixed(2)
-    let calculateTipByFifteenPercent =( billInput * fifteen_percent).toFixed(2)
-
-    let billTotal = parseFloat((calculateTipByFifteenPercent) + billInput).toFixed(2)
-
-    let billPerPerson = (billTotal/numberOfpeople).toFixed(2)
-    
-    tipAmount.innerText = billTotal
-    splitBill.innerText = billPerPerson
-
-    console.log(numberOfPeople)
-})
-
-twentyFivePercent.addEventListener('click', function() {
-    let billInput = parseFloat(billTotalInput.value)
-    let numberOfpeople = parseInt(peopleInput)
-    let twentyFive_percent = (25/100).toFixed(2)
-    let calculateTipByTwentyFivePercent =( billInput * twentyFive_percent).toFixed(2)
-
-    let billTotal = parseFloat((calculateTipByTwentyFivePercent) + billInput).toFixed(2)
-
-    let billPerPerson = (billTotal/numberOfpeople).toFixed(2)
-    
-    tipAmount.innerText = billTotal
-    splitBill.innerText = billPerPerson
-
-    console.log(numberOfPeople)
-})
-
-fiftyPercent.addEventListener('click', function() {
-    let billInput = parseFloat(billTotalInput.value)
-    let numberOfpeople = parseInt(peopleInput)
-    let fifty_percent = (50/100).toFixed(2)
-    let calculateTipByFiftyPercent =( billInput * fifty_percent).toFixed(2)
-
-    let billTotal = parseFloat((calculateTipByFiftyPercent) + billInput).toFixed(2)
-
-    let billPerPerson = (billTotal/numberOfpeople).toFixed(2)
-    
-    tipAmount.innerText = billTotal
-    splitBill.innerText = billPerPerson
-
-    console.log(numberOfPeople)
-})
-
-customPercent.addEventListener('input', function() {
-    let billInput = parseFloat(billTotalInput.value)
-    let numberOfpeople = parseInt(peopleInput)
-    let custom_percent = parseFloat(customPercent.value/100)
-    let calculateTipByCustomPercent =( billInput * custom_percent).toFixed(2)
-
-    let billTotal = parseFloat((calculateTipByCustomPercent) + billInput).toFixed(2)
-
-    let billPerPerson = (billTotal/numberOfpeople).toFixed(2)
-    
-    
-    tipAmount.innerText = billTotal
-    splitBill.innerText = billPerPerson
-
-    console.log(numberOfPeople)
-})
-
-
-
-
-// btnClick.forEach(function(btnClick) {
-//     btnClick.addEventListener('click', function() {
-//         const btnInput = btnClick.textContent;
-//         // console.log(btnInput)
-//     });
-// })
-
-// const inputs = [billInput,peopleInput,customInput]
-
-// inputs.forEach(function(input) {
-//     input.addEventListener('input',function() {
-//     const inputValue = input.value
-
-//         console.log(inputValue)
-//     })
-// })
-
-// btnReset.addEventListener('click', function() {
-//     location.reload()
-// })
-
-// function calculateTip() {
-//     const bill = parseFloat(billInput.value) || 0;
-//     const noOfPeople = parseFloat(peopleInput.value) || 1;
-
-//     let tipPercentage = 0
-//     buttons.forEach(function(btnClick){
-//         if(btnClick.classList.contains('active')){
-            
-//         }
-//     })
-// }
-
-
-
+const resetFunction = () => {
+  billTotalInput.value = '';
+  numberOfPeopleInput.value = '';
+  customPercentTip.value = '';
+  tipPerPersonOutput.innerHTML = '$0.00';
+  totalPerPersonOutput.innerHTML = '$0.00';
+};

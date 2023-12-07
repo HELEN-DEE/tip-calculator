@@ -1,155 +1,172 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Space Mono', monospace;
-    background-color: hsl(185, 41%, 84%);
+  font-family: 'Space Mono', monospace;
+  background-color: hsl(185, 41%, 84%);
 }
 
 header {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: hsl(0, 0%, 100%);
-    margin: 5% 22%;
-    padding: 2rem;
-    gap: 4rem;
-    border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 100%);
+  margin: 2% 25%;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 20px;
 }
-
 
 .tip-bg {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 3rem;
-    font-family: inherit
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  font-family: inherit;
 }
 .tip-bg button {
-    background-color: hsl(183, 100%, 15%);
-    padding: 5px 20px;
-    border: 0;
-    color: hsl(0, 0%, 100%);
-    font-family: inherit;
-    font-size: 1.2rem;
+  background-color: hsl(183, 100%, 15%);
+  padding: 5px 20px;
+  border: 0;
+  width: 100px;
+  color: hsl(0, 0%, 100%);
+  font-family: inherit;
+  font-size: 1.2rem;
 }
 
 .tip-bg button:hover {
-    background-color: hsl(172, 67%, 45%);
-    
+  background-color: hsl(172, 67%, 45%);
 }
 
-    #custom {
-    background-color: hsl(189, 41%, 97%);
-    color: hsla(183, 100%, 15%, 0.527) ;
-    border: 0;
-    max-width: 6rem;
-    font-size: 1.2rem;
-    text-align: center;
-    font-family: inherit;
+.tip-bg input {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(185, 41%, 84%);
+  border: 0;
+  width: 100px;
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
-#custom:focus {
-    outline: none;
+/* ! CSS CORRECTIONS */
+.left-side {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
 }
 
-
-.dir-rtl {
-    direction: rtl;
-    
-}
 
 .text-input {
-    background-color: hsl(189, 41%, 97%);
-    
+  background-color: hsl(189, 41%, 97%);
+  align-items: center;
+  border-radius: 12px;
+}
+
+.bill-input input ,  .people-input input {
+  background: hsl(189, 41%, 97%) url('./images/icon-dollar.svg') no-repeat
+  scroll 10px 12px;
+  text-align: right;
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 20px;
+  font-family: inherit;
 }
 
 .text-input input {
-    background-color:transparent;
-    border: 0;
-    /* width: 18rem; */
-    padding: 7px 5px;
-    font-size: 20px;
-    font-family: inherit;
+  background-color: transparent;
+  border: 0;
 }
 
+
 .text-input input:focus {
-    outline: none;
+  outline: none;
+  border: 1px solid hsl(172, 67%, 45%);
 }
 
 .text-input span {
-    margin-left: 5px;
-}
-
-label {
-    margin-bottom: 5rem;
+  margin-left: 5px;
 }
 
 .right-side {
-    background-color: hsl(183, 100%, 15%);
-    color: hsl(0, 0%, 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem ;
-    border-radius: 10px;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+}
+.flex-cl-jc {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .right-side button {
-    padding: 10px 20px;
-    background-color: hsl(172, 67%, 45%);
-    color: hsl(184, 11%, 26%);
-    text-transform: uppercase;
-    border: 0;
-    width: 100%;
-    margin-top: 3rem;
+  padding: 10px 20px;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(184, 11%, 26%);
+  text-transform: uppercase;
+  border: 0;
+  width: 100%;
+  margin-top: 3rem;
 }
 
 .right-side button:hover {
-    background-color: hsl(185, 95%, 85%);
+  background-color: hsl(185, 95%, 85%);
 }
 
 h4 {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.flex {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
+.flex-jc-sb {
+  display: flex;
+  justify-content: space-between;
 }
 
-.flex span {
-    color: hsl(186, 14%, 43%);
-    font-size: 12px;
+.full-width {
+  width: 100%;
+}
+.full-width span {
+  color: hsl(186, 14%, 43%);
+  font-size: 12px;
 }
 
-.flex h1 {
-    font-size: 2rem;
-    color: hsl(172, 67%, 45%);
+.full-width h1 {
+  font-size: 2rem;
+  color: hsl(172, 67%, 45%);
 }
 
 .inherit {
-    font-family: inherit;
-    font-size: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
-@media screen and (max-width: 768px){
-    .container {
-        flex-direction: column;
-        margin: 0;
-    }
-} 
+.attribution {
+  text-align: center;
+  font-size: 12px;
+}
 
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 2rem 0;
+    padding: 1rem 10px;
+  }
+
+  .right-side {
+    width: 100%;
+  }
+}

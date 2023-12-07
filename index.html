@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -13,65 +12,60 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Tip calculator app</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <!-- <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style> -->
   </head>
   <body>
     <header>
-      <h1>spli<br />tter</h1>
+      <img src="/images/logo.svg" alt="logo" />
     </header>
     <section class="container">
       <div class="left-side">
-        <label for="bill">Bill</label>
-        <div class="text-input">
-          <span><img src="images/icon-dollar.svg" alt="dollar-img" /></span>
-          <input type="text" class="dir-rtl" id="bill-total" placeholder="" />
+        <div class="bill-input_label">
+          <label for="bill " class="">Bill</label>
+          <div class="text-input mt-custom bill-input">
+            <input
+              class="dir-rtl"
+              id="bill-total"
+              type="text"
+              placeholder="0"
+            />
+          </div>
         </div>
-        <p>Select Tip %</p>
-        <div class="tip-bg">
-          <button id="five-percent" class="btn-click">5%</button>
-          <button id="ten-percent" class="btn-click">10%</button>
-          <button id="fifteen-percent" class="btn-click">15%</button>
-          <button id="twenty-five-percent" class="btn-click">25%</button>
-          <button id="fifty-percent" class="btn-click">50%</button>
-          <input id="custom-percent" type="text" placeholder="Custom" />
+        <div class="select-tip_input-label">
+          <p class="mb-custom">Select Tip %</p>
+          <div class="tip-bg">
+            <button id="five-percent-tip" class="btn-click">5%</button>
+            <button id="ten-percent-tip" class="btn-click">10%</button>
+            <button id="fifteen-percent-tip" class="btn-click">15%</button>
+            <button id="twenty-five-percent-tip" class="btn-click">25%</button>
+            <button id="fifty-percent-tip" class="btn-click">50%</button>
+            <input id="custom-percent-tip" type="text" placeholder="Custom" />
+          </div>
         </div>
-
-        <label for="people">Number of People</label>
-        <div class="text-input">
-          <span><img src="images/icon-person.svg" alt="person-img" /></span>
-          <input
-            type="text"
-            class="dir-rtl"
-            id="numberOfPeople"
-            placeholder=""
-          />
+        <div class="people-input_label">
+          <label class="" for="people">Number of People</label>
+          <div class="text-input flex-jc-sb people-input mt-custom">
+            <input
+              type="text"
+              class="dir-rtl"
+              id="numberOfPeople"
+              placeholder="0"
+            />
+          </div>
         </div>
       </div>
 
-      <div class="right-side">
-        <div class="flex">
+      <div class="right-side full-width flex-cl-jc">
+        <div class="full-width flex-jc-sb">
           <h4>Tip Amounts <span class="light">/ person</span></h4>
-          <h1 id="tip-amount">$0.00</h1>
+          <h1 id="tip-per-person">$0.00</h1>
         </div>
-        <div class="flex">
+        <div class="full-width flex-jc-sb">
           <h4>Total <span>/ person</span></h4>
-          <h1 id="split-bill">$0.00</h1>
+          <h1 id="total-per-person">$0.00</h1>
         </div>
         <button class="inherit" id="btnReset">Reset</button>
       </div>
     </section>
-    <!-- Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset -->
 
     <div class="attribution">
       Challenge by
@@ -83,6 +77,6 @@
       >. Coded by <a href="#">HELEN DEE</a>.
     </div>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
