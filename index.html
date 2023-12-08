@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -15,7 +16,7 @@
   </head>
   <body>
     <header>
-      <img src="images/logo.svg" alt="logo" />
+      <img src="/images/logo.svg" alt="" />
     </header>
     <section class="container">
       <div class="left-side">
@@ -42,8 +43,11 @@
           </div>
         </div>
         <div class="people-input_label">
-          <label class="" for="people">Number of People</label>
-          <div class="text-input flex-jc-sb people-input mt-custom">
+          <div class="top flex">
+            <label class="" for="people">Number of People</label>
+            <div id="error-message" class="error-message"></div>
+          </div>
+          <div class="text-input people-input mt-custom">
             <input
               type="text"
               class="dir-rtl"
@@ -54,18 +58,20 @@
         </div>
       </div>
 
-      <div class="right-side full-width flex-cl-jc">
-        <div class="full-width flex-jc-sb">
+      <div class="right-side">
+        <div class="flex">
           <h4>Tip Amounts <span class="light">/ person</span></h4>
           <h1 id="tip-per-person">$0.00</h1>
         </div>
-        <div class="full-width flex-jc-sb">
+        <div class="flex">
           <h4>Total <span>/ person</span></h4>
           <h1 id="total-per-person">$0.00</h1>
         </div>
         <button class="inherit" id="btnReset">Reset</button>
       </div>
     </section>
+    <!-- Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
+    person Total / person Reset -->
 
     <div class="attribution">
       Challenge by
